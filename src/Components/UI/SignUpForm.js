@@ -45,7 +45,7 @@ const SignUpForm =()=>{
       <Form.Control type="password" placeholder="Password"  value={userPassword} onChange={onChangePassword} isInvalid={isValidForm}/>
     </Form.Group>
     <Button variant="dark" type="button" onClick={loginCheckData}>
-    Login
+    SignUp
   </Button>
     </Form>
     )
