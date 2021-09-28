@@ -29,7 +29,7 @@ const NavigationBar = (props) => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link onClick={props.onTutorial} href="#features">How to play</Nav.Link>
+              <Nav.Link onClick={props.onTutorial} href="#tutorial">How to play</Nav.Link>
             </Nav>
             <Nav>
             <NavDropdown title="SignUp" menuVariant="black" >
