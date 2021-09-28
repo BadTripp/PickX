@@ -20,8 +20,7 @@ const NavigationBar = (props) => {
 
   
 
-  return <React.Fragment>
-      <Navbar collapseOnSelect expand="sm" variant="light">
+  return <Navbar collapseOnSelect expand="sm" variant="light">
         <Container>
           <Navbar.Brand href="#home">
             <img  alt="" src={logoImg}  />
@@ -53,7 +52,7 @@ const NavigationBar = (props) => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </React.Fragment>
+    
   
 };
 
