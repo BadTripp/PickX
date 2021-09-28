@@ -1,6 +1,6 @@
 import { Card,Button } from "react-bootstrap";
 
-import logoImg from "../../Assets/logo.png";
+
 import classes from "./Homecard.module.css";
 
 const HomeCard = (props) => {
