@@ -1,20 +1,27 @@
-import React from "react";
+import logoImg from "../../Assets/logo.png";
 import "bootstrap/dist/css/bootstrap.css";
+import db from "./../UI/Firebase";
+import {
+  collection,
+  onSnapshot,
+} from "@firebase/firestore";
+import React,{ useState, useEffect } from "react";
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 
-import logoImg from "../../Assets/logo.png";
-import "./AnimationText.css";
 
+const NavHomeProfile = (props) => {
 
-import LoginForm from "./LoginForm";
-import SignUpForm from "./SignUpForm";
+    const [users, setUser] = useState([""]);
 
-const NavigationBar = (props) => {
+    useEffect(() => {
+      console.log("Effect");
+      onSnapshot(collection(db, "User"), (snapshot) => {
+        setUser(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      });
+      return;
+    }, []);
 
-
-  const LoginComplete=(user,id)=>{
-    props.onCompleteLogin(user,id);
-  };
+    const Username=users[props.index].Username;
 
   return (
     <Navbar collapseOnSelect expand="sm" variant="light">
@@ -26,17 +33,18 @@ const NavigationBar = (props) => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link onClick={props.onTutorial} href="#tutorial">
-              How to play
+            <Nav.Link  href="#tutorial">
+                {console.log(props.index)}
+                  Welcome {Username} !
             </Nav.Link>
           </Nav>
           <Nav>
             <NavDropdown title="SignUp" menuVariant="black">
-              <SignUpForm ></SignUpForm>
+
             </NavDropdown>
 
             <NavDropdown title="Login" menuVariant="light">
-              <LoginForm onLoginUser={LoginComplete}></LoginForm>
+              
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
@@ -44,5 +52,4 @@ const NavigationBar = (props) => {
     </Navbar>
   );
 };
-
-export default NavigationBar;
+export default NavHomeProfile;
