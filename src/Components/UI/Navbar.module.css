@@ -1,0 +1,62 @@
+.myBG {
+  /*background-blend-mode: darken;*/
+  background: blanchedalmond;
+  border-start-start-radius: 10%;
+  border-end-start-radius: 10%;
+  left: 10px;
+  
+  
+}
+
+.logo {
+  
+  
+  
+
+}
+.zoom {
+  
+  -webkit-transition: opacity 7s ease-in-out;
+  -moz-transition: opacity 7s ease-in-out;
+  -o-transition: opacity 7s ease-in-out;
+  transition: opacity 7s ease-in-out;
+}
+@keyframes heartbeat
+{
+  0%
+  {
+    transform: scale( .75 );
+  }
+  20%
+  {
+    transform: scale( 1 );
+  }
+  40%
+  {
+    transform: scale( .75 );
+  }
+  60%
+  {
+    transform: scale( 1 );
+  }
+  80%
+  {
+    transform: scale( .75 );
+  }
+  100%
+  {
+    transform: scale( .75 );
+  }
+}
+.zoom { 
+    animation-name: heartbeat; 
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-direction: alternate;
+  
+  }
+
+.core{
+   
+  }
