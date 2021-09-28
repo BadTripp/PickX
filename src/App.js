@@ -18,12 +18,12 @@ function App() {
   };
 
   return (
-    <React.Fragment>
+    <body>
       <NavigationBar onTutorial={TutorialOpen}></NavigationBar>
 
       {!isTutorialVisible && <HomeCard></HomeCard>}
       {isTutorialVisible && <Tutorial TutorialClose={TutorialClose}></Tutorial>}
-    </React.Fragment>
+      </body>
   );
 }
 
