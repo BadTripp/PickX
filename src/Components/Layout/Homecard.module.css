@@ -3,11 +3,13 @@
 }
 .card {
   background: radial-gradient(#e5e5e5, #ffff, #e5e5e5);
+  border-radius: 50px;
 }
+
 .box {
   text-align: center;
   align-items: center;
-
+  border-radius: 10px;
   padding: 50px 0;
   top: 50%;
   position: absolute;
