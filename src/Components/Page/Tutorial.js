@@ -1,6 +1,6 @@
 import classes from "./Tutorial.module.css";
 import { Button } from "react-bootstrap";
-import { propTypes } from "react-bootstrap/esm/Image";
+
 const Tutorial = (props) => {
   return (
     <div className={classes.tutorial}>

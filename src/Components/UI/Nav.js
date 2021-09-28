@@ -1,35 +1,30 @@
-import React,{useState} from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import {
   Container,
   Navbar,
   Nav,
   NavDropdown,
-  InputGroup,
-  Form,
 } from "react-bootstrap";
-import classes from "./Navbar.module.css";
+
 import logoImg from "../../Assets/logo.png";
 import "./AnimationText.css";
-import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
-import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
+
+
 import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
 
 const NavigationBar = (props) => {
-  const [onLogin,setOnLogin]=useState(true);
+  
 
 
-  const onButtonLogin=()=>{
-    setOnLogin(false);
-    console.log(onLogin);
-  };
+  
 
   return <React.Fragment>
       <Navbar collapseOnSelect expand="sm" variant="light">
         <Container>
           <Navbar.Brand href="#home">
-            <img src={logoImg} />
+            <img  alt="" src={logoImg}  />
             PickX
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />

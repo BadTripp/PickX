@@ -1,9 +1,9 @@
-import logo from "./logo.svg";
+
 import NavigationBar from "./Components/UI/Nav";
 import HomeCard from "./Components/Layout/Homecard";
 import React, { useState } from "react";
-import classes from "./Components/Layout/Homecard.module.css";
-import { Placeholder } from "react-bootstrap";
+
+
 
 import "./App.css";
 import Tutorial from "./Components/Page/Tutorial";

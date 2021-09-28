@@ -1,5 +1,5 @@
 import { Card,Button } from "react-bootstrap";
-import { propTypes } from "react-bootstrap/esm/Image";
+
 import logoImg from "../../Assets/logo.png";
 import classes from "./Homecard.module.css";
 
