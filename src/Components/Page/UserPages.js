@@ -23,10 +23,12 @@ const [View, setView] = useState("");
   
 
   return (
-      <React.Fragment>
+    <React.Fragment>
     <HomeProfileINBar Profile={UserProfile} Work={UserWork}></HomeProfileINBar>
     
-    <div className={classes.userPages}>{View}</div>
+    <div >
+        {View}
+        </div>
     </React.Fragment>
   );
 };
