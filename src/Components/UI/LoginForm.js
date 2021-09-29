@@ -37,14 +37,14 @@ const LoginForm = (props) => {
   };
   const onChangeEmail = (event) => {
     event.preventDefault();
-    console.log(event.target.value);
+    
     setUserEmail(event.target.value);
     
   };
   const onChangePassword = (event) => {
     event.preventDefault();
     setUserPassword(event.target.value);
-    console.log(event.target.value);
+    
     setIsValidLogin(true)
   };
 

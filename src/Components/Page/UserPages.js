@@ -3,28 +3,29 @@ import db from "./../UI/Firebase";
 import { collection, onSnapshot } from "@firebase/firestore";
 import React, { useState, useEffect } from "react";
 import HomeProfileINBar from "./HomeProfileINBar";
-import { Card, ListGroup } from "react-bootstrap";
+
 import UserStats from "./UserStats";
-import userWork from "./userWork";
+import UserWork from "./userWork";
+
 const UserPages = (props) => {
   
   
-  
+const [View, setView] = useState("");
   const UserProfile = () => {
-      
-    setView(<UserStats/>);
+    
+    setView(<UserStats  Userid={props.userid} />);
   };
 
   const UserWork=()=>{
 
-    setView(<userWork></userWork>);
+    setView(<p>ciao</p>);
   };
-  const [View, setView] = useState(<UserStats/>);
+  
 
   return (
       <React.Fragment>
     <HomeProfileINBar Profile={UserProfile} Work={UserWork}></HomeProfileINBar>
-        
+    
     <div className={classes.userPages}>{View}</div>
     </React.Fragment>
   );

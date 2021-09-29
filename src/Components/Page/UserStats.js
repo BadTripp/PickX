@@ -6,16 +6,23 @@ import React, { useState, useEffect } from "react";
 import classes from "./Profile.module.css";
 
 
-const UserStats = ()=>{
+const UserStats = (props)=>{
 
     const [users, setUser] = useState([{ Username: "Loading" }]);
     const [ID, setID] = useState(0);
     
+    
     useEffect(() => {
-      console.log("Effect");
+      
       onSnapshot(collection(db, "User"), (snapshot) => {
         setUser(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-        setID(localStorage.getItem("U_V"));
+        if(props.Userid !== localStorage.getItem("U_V"))
+        {
+            localStorage.setItem("U_V", props.Userid);
+        }else{
+
+            setID(localStorage.getItem("U_V"));
+        }
       });
       return;
     }, []);

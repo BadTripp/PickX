@@ -11,18 +11,29 @@ import UserPages from "./Components/Page/UserPages";
 function App(props) {
   const [isTutorialVisible, setTutorialVisible] = useState(false);
   const [isLogged, setIsLogged] = useState();
-  const [id, setid] = useState();
+  const [id, setid] = useState("");
+  
   useEffect(() => {
     const storedUserLoggedInInformation = localStorage.getItem("isLogged");
-
-    if (storedUserLoggedInInformation === "1") {
+    
+    
+    if (storedUserLoggedInInformation === "1" ) {
       setIsLogged(true);
       setid(localStorage.getItem("U_V"));
+      
     } else {
+      
       setIsLogged(false);
-      <Banner variant={"danger"}>Logout successful!</Banner>
+      
     }
-  }, [isLogged]);
+    
+    
+    
+    
+    
+  }, []);
+
+  
 
   const TutorialClose = () => {
     setTutorialVisible(false);
@@ -39,8 +50,9 @@ function App(props) {
 
   const Logout=()=>{
     localStorage.removeItem('isLogged');
+    localStorage.removeItem('U_V');
     setIsLogged(false);
-    return 
+    
   };
   return (
     <React.Fragment>
@@ -53,7 +65,7 @@ function App(props) {
         ></NavigationBar>
       )}
       
-      {isLogged && <UserPages></UserPages> }
+      {isLogged && <UserPages userid={id}></UserPages> }
       {!isTutorialVisible && !isLogged && <HomeCard></HomeCard>}
       {isTutorialVisible && <Tutorial TutorialClose={TutorialClose}></Tutorial>}
     </React.Fragment>
