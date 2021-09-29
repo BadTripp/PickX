@@ -51,7 +51,7 @@ const SignUpForm = (props) => {
 
   
   const RegisterCheckData = () => {
-    
+    props.onRegister();
     
     add();
   };

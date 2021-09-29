@@ -1,21 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
-
 import logoImg from "../../Assets/logo.png";
 import "./AnimationText.css";
 
-
 import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
-
+import Banner from "./Banner";
 const NavigationBar = (props) => {
 
+  const [registerComplete,setRegisterComplete]=useState(false);
 
-  const LoginComplete=(user,id)=>{
-    props.onCompleteLogin(user,id);
+  const LoginComplete = (user, id) => {
+    props.onCompleteLogin(user, id);
   };
-
+  const completeRegister=()=>{
+      setRegisterComplete(true)
+  }
+  
   return (
     <Navbar collapseOnSelect expand="sm" variant="light">
       <Container>
@@ -30,10 +32,11 @@ const NavigationBar = (props) => {
               How to play
             </Nav.Link>
           </Nav>
+          {registerComplete &&<Banner variant={"success"}>Successfully registered, you can now log in!</Banner>}
           <Nav>
-            <NavDropdown title="SignUp" menuVariant="black">
-              <SignUpForm ></SignUpForm>
-            </NavDropdown>
+            {!registerComplete && <NavDropdown title="SignUp"  menuVariant="black">
+              <SignUpForm onRegister={completeRegister}></SignUpForm>
+            </NavDropdown>}
 
             <NavDropdown title="Login" menuVariant="light">
               <LoginForm onLoginUser={LoginComplete}></LoginForm>
@@ -41,7 +44,9 @@ const NavigationBar = (props) => {
           </Nav>
         </Navbar.Collapse>
       </Container>
+      
     </Navbar>
+    
   );
 };
 

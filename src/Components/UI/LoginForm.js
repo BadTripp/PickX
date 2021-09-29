@@ -18,6 +18,7 @@ const LoginForm = (props) => {
     console.log("Effect");
     onSnapshot(collection(db, "User"), (snapshot) => {
       setUser(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      
     });
     return;
   }, []);
@@ -27,6 +28,7 @@ const LoginForm = (props) => {
       {
          const userID = users.findIndex(user=>user.Email === userEmail);
          props.onLoginUser(users,userID);
+         
       }else{
           console.log("non loggato")
           setIsValidLogin(false);
@@ -48,6 +50,7 @@ const LoginForm = (props) => {
 
   return (
     <Form>
+        
       <Form.Group>
         <Form.Label>Email address</Form.Label>
         <Form.Control
