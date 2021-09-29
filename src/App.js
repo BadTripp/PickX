@@ -3,9 +3,10 @@ import HomeCard from "./Components/Layout/Homecard";
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Tutorial from "./Components/Page/Tutorial";
-import HomeProfile from "./Components/Page/HomeProfile";
+
 import NavHomeProfile from "./Components/Page/NavHomeProfile";
 import Banner from "./Components/UI/Banner";
+import UserPages from "./Components/Page/UserPages";
 
 function App(props) {
   const [isTutorialVisible, setTutorialVisible] = useState(false);
@@ -19,8 +20,9 @@ function App(props) {
       setid(localStorage.getItem("U_V"));
     } else {
       setIsLogged(false);
+      <Banner variant={"danger"}>Logout successful!</Banner>
     }
-  }, []);
+  }, [isLogged]);
 
   const TutorialClose = () => {
     setTutorialVisible(false);
@@ -38,7 +40,7 @@ function App(props) {
   const Logout=()=>{
     localStorage.removeItem('isLogged');
     setIsLogged(false);
-    return <Banner variant={"danger"}>Logout successful!</Banner>
+    return 
   };
   return (
     <React.Fragment>
@@ -51,7 +53,7 @@ function App(props) {
         ></NavigationBar>
       )}
       
-      {isLogged && <HomeProfile></HomeProfile>}
+      {isLogged && <UserPages></UserPages> }
       {!isTutorialVisible && !isLogged && <HomeCard></HomeCard>}
       {isTutorialVisible && <Tutorial TutorialClose={TutorialClose}></Tutorial>}
     </React.Fragment>
