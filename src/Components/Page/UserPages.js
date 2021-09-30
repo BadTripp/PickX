@@ -10,7 +10,7 @@ import UserWork from "./userWork";
 const UserPages = (props) => {
   
   
-const [View, setView] = useState("");
+const [View, setView] = useState(<UserStats></UserStats>);
   const UserProfile = () => {
     
     setView(<UserStats  Userid={props.userid} />);
@@ -26,7 +26,7 @@ const [View, setView] = useState("");
     <React.Fragment>
     <HomeProfileINBar Profile={UserProfile} Work={UserWork}></HomeProfileINBar>
     
-    <div >
+    <div className={classes.userPages}>
         {View}
         </div>
     </React.Fragment>

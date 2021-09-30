@@ -18,6 +18,7 @@ const NavHomeProfile = (props) => {
   }, []);
 
   return (
+      
     <Navbar collapseOnSelect expand="sm" variant="light">
       <Container>
         <Navbar.Brand href="#home">
