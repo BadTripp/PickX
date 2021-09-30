@@ -26,7 +26,7 @@ const [View, setView] = useState(<UserStats></UserStats>);
     <React.Fragment>
     <HomeProfileINBar Profile={UserProfile} Work={UserWork}></HomeProfileINBar>
     
-    <div className={classes.userPages}>
+    <div >
         {View}
         </div>
     </React.Fragment>
