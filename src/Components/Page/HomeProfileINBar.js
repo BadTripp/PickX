@@ -6,7 +6,7 @@ import React, { useState, useEffect } from "react";
 
 const HomeProfileINBar = (props) => {
   return (
-    <div className={classes.fadein}>
+    <div >
       <Nav className={classes.ProfileBar} bg="black" activeKey="1">
         <Nav.Item>
           <Nav.Link eventKey="1" href="#/Profile" onClick={props.Profile}>
