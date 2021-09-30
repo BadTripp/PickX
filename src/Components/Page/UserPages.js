@@ -34,3 +34,4 @@ const [View, setView] = useState(<UserStats></UserStats>);
 };
 
 export default UserPages;
+//className={classes.userPages}
