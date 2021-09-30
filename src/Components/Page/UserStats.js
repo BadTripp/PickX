@@ -16,14 +16,7 @@ const UserStats = (props)=>{
       
       onSnapshot(collection(db, "User"), (snapshot) => {
         setUser(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-        if(props.Userid !== localStorage.getItem("U_V"))
-        {
-            console.log(props.UserId)
-            localStorage.setItem("U_V", props.Userid);
-        }else{
-
-            setID(localStorage.getItem("U_V"));
-        }
+        
       });
       return;
     }, []);
