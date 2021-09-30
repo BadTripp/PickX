@@ -33,7 +33,7 @@ return <React.Fragment>
 
 
 <div className={classes.text}>
-    <Card style={{ width: "18rem", opacity: "80%" }} bg="grey" border="light" className="horizontal">
+    <Card style={{ width: "18rem"}} bg="grey" border="light" className="horizontal">
 <ListGroup variant="flush">
     
   <ListGroup.Item>UserName:                    <b>{users[ID].Username}</b></ListGroup.Item>
