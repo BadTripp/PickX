@@ -6,6 +6,7 @@ import HomeProfileINBar from "./HomeProfileINBar";
 
 import UserStats from "./UserStats";
 import UserWork from "./userWork";
+import userWork from "./userWork";
 
 const UserPages = (props) => {
   
@@ -18,7 +19,7 @@ const [View, setView] = useState(<UserStats></UserStats>);
 
   const UserWork=()=>{
 
-    setView(<p>ciao</p>);
+    setView(<userWork></userWork>);
   };
   
 

@@ -11,9 +11,9 @@
   position: absolute;
 
   border: solid;
-  color: beige;
+  color: rgb(58, 58, 23);
   border-radius: 10px;
-  background-color: black;
+  background-color: rgb(0, 0, 0,0.2);
 
   padding: 50px 0;
   top: 50%;
